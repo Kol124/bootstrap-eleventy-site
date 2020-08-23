@@ -1,0 +1,36 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <div class="spt">
+    <div class="testimonial-area spb">
+      <div class="container">
+        <div class="section-title">
+          <h2>Clients Review</h2>
+          <p>Malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+        </div>
+
+        <div class="testimonial-slider bordered">
+
+          {% for testimonial in collections.testimonials %}
+            <div class="single-slide">
+              <div class="inner">
+                <p>{{ testimonial.data.quote }}</p>
+                <div class="client-info">
+                  <div class="client-img">
+                    <img alt="client" src="{{ testimonial.data.headshot }}">
+                  </div>
+                  <div class="client-data">
+                    <h4>{{ testimonial.data.name }}</h4>
+                    <span>{{ testimonial.data.job }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock content %}
